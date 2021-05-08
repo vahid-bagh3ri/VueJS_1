@@ -3,16 +3,24 @@ const app = Vue.createApp({
     return {
       counter: 10,
       name: "",
-      confirmedName: "",
     };
   },
-  methods: {
-    outputFullname(){
-      console.log('Running again...')
-      if (this.name === '') {
-        return '';
+  computed: {
+    fullname() {
+      console.log("Running again...");
+      if (this.name === "") {
+        return "";
       }
-      return this.name + ' ' + 'bagheri';
+      return this.name + " " + "bagheri";
+    },
+  },
+  methods: {
+    outputFullname() {
+      console.log("Running again...");
+      if (this.name === "") {
+        return "";
+      }
+      return this.name + " " + "bagheri";
     },
     setName(event) {
       this.name = event.target.value;
@@ -25,7 +33,7 @@ const app = Vue.createApp({
       // this.counter--
     },
     resetInput() {
-      this.name = '';
+      this.name = "";
     },
   },
 });
