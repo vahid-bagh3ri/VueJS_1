@@ -49,11 +49,15 @@ proxy.message = "Helooo!!!!";
 console.log(proxy.longMessage);
 
 const app2 = Vue.createApp({
-  data(){
-    return{
-      favoriteMeal: 'pizza'
-    }
-  }
+  template: `
+  <p>{{ favoriteMeal }}</p>
+  `,
+  data() {
+    return {
+      favoriteMeal: "pizza",
+    };
+  },
 });
 
 app2.mount("#app2");
+
