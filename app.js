@@ -10,7 +10,11 @@ const app = Vue.createApp({
       this.currentUserInput = event.target.value;
     },
     setText() {
-      this.message = this.currentUserInput;
+      // this.message = this.currentUserInput;
+
+      this.message = this.$refs.userText.value;
+
+      // console.dir(this.$refs.userText);
     },
   },
 });
@@ -60,4 +64,3 @@ const app2 = Vue.createApp({
 });
 
 app2.mount("#app2");
-
