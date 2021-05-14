@@ -50,13 +50,13 @@ export default {
     },
     addContact(name, phone, email) {
       const newFriendContact = {
-        id: new Date().toISOString,
+        id: new Date().toISOString(),
         name: name,
         phone: phone,
         email: email,
         isFavorite: false,
       };
-      this.friend.push(newFriendContact);
+      this.friends.push(newFriendContact);
     },
   },
 };
