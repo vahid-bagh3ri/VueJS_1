@@ -16,12 +16,12 @@
 
 <script>
 import StoredResources from './StoredResources.vue';
-// import AddResource from './AddResource.vue';
+import AddResource from './AddResource.vue';
 
 export default {
   components: {
-    StoredResources
-    // AddResource
+    StoredResources,
+    AddResource
   },
   data() {
     return {

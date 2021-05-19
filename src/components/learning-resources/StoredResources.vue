@@ -1,5 +1,4 @@
 <template>
-  <add-resource @new-resource="newResource"></add-resource>
   <ul>
     <learning-resource
       v-for="res in resources"
@@ -18,17 +17,6 @@ export default {
   inject: ['resources'],
   components: {
     LearningResource
-  },
-  methods: {
-    newResource(title, description, link) {
-      const brandNewResource = {
-        id: new Date().toISOString(),
-        title: title,
-        description: description,
-        link: link
-      };
-      this.resources.push(brandNewResource);
-    }
   }
 };
 </script>

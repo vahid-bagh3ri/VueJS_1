@@ -1,26 +1,20 @@
 <template>
   <base-card>
-    <form @submit.prevent="addNewResource">
+    <form>
       <div class="form-control">
         <label for="title">Title</label>
-        <input type="text" name="title" id="title" v-model="enteredTitle" />
+        <input type="text" name="title" id="title" />
       </div>
       <div class="form-control">
         <label for="description">Description</label>
-        <textarea
-          name="description"
-          id="description"
-          rows="3"
-          v-model="enteredDescription"
-        ></textarea>
+        <textarea name="description" id="description" rows="3"></textarea>
       </div>
       <div class="form-control">
         <label for="link">Link</label>
-        <input type="url" name="link" id="link" v-model="enteredLink" />
+        <input type="url" name="link" id="link" />
       </div>
       <div>
         <base-button type="submit">Add Resource</base-button>
-        <!-- emit should be empliment here and send data to StoredResources in TheResources.Vue -->
       </div>
     </form>
   </base-card>
@@ -29,25 +23,7 @@
 <script>
 import BaseButton from '../UI/BaseButton.vue';
 export default {
-  components: { BaseButton },
-  emits: ['new-resource'],
-  data() {
-    return {
-      enteredTitle: '',
-      enteredDescription: '',
-      enteredLink: ''
-    };
-  },
-  methods: {
-    addNewResource() {
-      this.$emit(
-        'new-resource',
-        this.enteredTitle,
-        this.enteredDescription,
-        this.enteredLink
-      );
-    }
-  }
+  components: { BaseButton }
 };
 </script>
 
