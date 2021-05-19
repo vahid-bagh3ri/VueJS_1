@@ -10,23 +10,24 @@
       :mode="addResButtonMode"
       >Add resource</base-button
     >
-    <component :is="selectedTab"></component>
+    <keep-alive>
+      <component :is="selectedTab"></component>
+    </keep-alive>
   </base-card>
 </template>
 
 <script>
-import StoredResources from './StoredResources.vue';
 import AddResource from './AddResource.vue';
+// I moved StoredResources componenet to main.js bcs of some dummy error
 
 export default {
   components: {
-    StoredResources,
     AddResource
   },
   data() {
     return {
       selectedTab: 'stored-resources',
-      StoredResources: [
+      storedResources: [
         {
           id: 'officail-guide',
           title: 'Official Guide',
@@ -44,7 +45,8 @@ export default {
   },
   provide() {
     return {
-      resources: this.StoredResources
+      resources: this.storedResources,
+      addResource: this.addResource
     };
   },
   computed: {
@@ -58,6 +60,16 @@ export default {
   methods: {
     setSelectedTab(tab) {
       this.selectedTab = tab;
+    },
+    addResource(title, description, url) {
+      const newResource = {
+        id: new Date().toISOString(),
+        title: title,
+        description: description,
+        link: url
+      };
+      this.storedResources.unshift(newResource);
+      this.selectedTab = 'stored-resources';
     }
   }
 };
