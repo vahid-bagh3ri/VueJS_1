@@ -36,13 +36,21 @@ export default {
       fetch(
         'https://vue-http-demo-60b83-default-rtdb.firebaseio.com/surveys.json'
       )
-        .then(function(response) {
+        .then(response => {
           if (response.ok) {
             return response.json();
           }
         })
-        .then(function(data) {
-          console.log(data);
+        .then(data => {
+          const results = [];
+          for (const id in data) {
+            results.push({
+              id: id,
+              name: data[id].name,
+              rating: data[id].rating
+            });
+          }
+          this.results = results;
         });
     }
   }
