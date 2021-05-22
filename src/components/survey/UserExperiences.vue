@@ -3,7 +3,7 @@
     <base-card>
       <h2>Submitted Experiences</h2>
       <div>
-        <base-button @click="laodExperiences"
+        <base-button @click="loadExperiences"
           >Load Submitted Experiences</base-button
         >
       </div>
@@ -32,7 +32,7 @@ export default {
     };
   },
   methods: {
-    laodExperiences() {
+    loadExperiences() {
       fetch(
         'https://vue-http-demo-60b83-default-rtdb.firebaseio.com/surveys.json'
       )
@@ -53,6 +53,9 @@ export default {
           this.results = results;
         });
     }
+  },
+  mounted() {
+    this.loadExperiences();
   }
 };
 </script>
