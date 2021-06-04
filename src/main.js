@@ -15,7 +15,7 @@ const router = createRouter({
     {
       name: 'teams',
       path: '/teams',
-      components: { defualt: TeamsList, footer: TeamsFooter },
+      components: { default: TeamsList, footer: TeamsFooter },
       children: [
         {
           name: 'team-members',
