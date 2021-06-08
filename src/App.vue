@@ -6,7 +6,7 @@
   <div class="container">
     <!-- enter-to-class="some=class" enter-active-class="..." -->
     <transition
-      name="para"
+      :css="false"
       @before-enter="beforeEnter"
       @enter="enter"
       @after-enter="afterEnter"
