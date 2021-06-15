@@ -30,7 +30,7 @@ const counterModule = {
     }
   },
   getters: {
-    testAuth(state, getters, rootState, rootGetters) {
+    testAuth(state) {
       return state.isLoggedIn;
     },
     finalCounter(state) {
