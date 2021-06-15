@@ -1,4 +1,5 @@
 export default {
+  namespaced: true,
   state() {
     return {
       items: [],
@@ -52,7 +53,7 @@ export default {
     products(state) {
       return state.items;
     },
-    Total(state) {
+    totalSum(state) {
       return state.total;
     },
     quantity(state) {
